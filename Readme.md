@@ -95,11 +95,3 @@ to kill the unused one. Postgres will be in charge of cleanup the unused disk sp
         tableNameService.handleEvent(tEvent);
         return true;
     ```
-### Alarms
-The process has Cloud Watch Alarms configured, an email will be sent to "DL - Dev Team" <dl.dev@pharmadatafactory.com> 
-in case of errors into the log. To create a new alarm 
-1. go to the CloudWatch panel
-1. add a new alarm
-1. select the metric to monitor 
-1. set the threshold to trigger the alarm
-1. set Default_CloudWatch_Alarms_Topic as SNS destination of the alarm

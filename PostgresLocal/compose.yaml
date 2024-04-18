@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: pg-local
+    image: postgres
+    hostname: localhost
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    restart: unless-stopped
+    volumes:
+      - ./db_init_scripts:/docker-entrypoint-initdb.d
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+    
